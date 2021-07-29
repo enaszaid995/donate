@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- web fonts -->
+     <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- Bootstrap -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container justify-content-between">
+          <form class="d-flex input-group w-auto" onclick="document.getElementById('id02').style.display='block'">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text text-white bg-dark border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </form>
+
+          <div class="nickname navbar-nav flex-row text-white d-none d-md-flex">
+              <h3 class="text-success m-auto">DONATEME<i class="fab fa-pagelines"></i></h3>
+          </div>
+
+          <div class="navbar-nav flex-row">
+            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="btn btn-success px-3 mr-2">
+              Login
+            </button>
+            <button type="button" class="btn btn-primary me-3">
+              Sign up 
+            </button>
+            
+          </div>
+        </div>
+        
+        
+      </nav>
+      <!-- LSearch Modal-->
+      <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content" action="/action_page.php">
+          <div class="container  dropdown" id="myDropdown">
+            <form class="d-flex input-group w-auto dropdown-content">
+              <input
+                type="search"
+                class="form-control rounded"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                onkeyup="filterFunction()"
+                id="myInput"
+              />
+              
+            </form>
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
+        </form>
+      </div>
+      <!--Login Modal-->
+      <div id="id01" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3 class="text-success m-auto">DONATEME<i class="fab fa-pagelines"></i></h3>
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+              
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+  
+      <!--Card Section-->
+      <section class="personcard">
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-3 col-md-6 col-sm-12 m-auto">
+                <img src="images/baby.jpg" class="img-fluid" alt="baby" width="250px" height="200px">
+            </div>
+            <div class="col-lg-9 col-md-6 col-sm-12">
+              <div class="card" style="width: 40rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Erik Jo.</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">8 month old</h6>
+                  <p class="card-text">
+                    Hi ,This is Erik The Only Child for his parents ,
+                     who has been suffering from a heterogenous soft tissue 
+                     mass lesion which is centered upon the left sphenopalatine fossa ,
+                      the lesion is seen crossing the skull base with large intracranialextra-axial
+                       space occuping lesion at the left temporal and left parasellar as well as inferior
+                        frontal regions .
+                      doctors advised that he needs a surgery urgently .
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Donate Form-->
+      <section class="donate">
+        <div class="container">
+          <div id="myDIV" class="header ">
+            <h3 style="margin:5px" class="text-success">Donate Now</h3>
+            <div class="row d-flex">
+              <div class="col-6 ">
+                <input type="text" id="myInput2" placeholder="Your Name.." width="100%">
+              </div>
+              <div class="col-lg-3">
+                <input type="number" id="myInput3" placeholder="Your Amount.." >
+                <label class="text-muted" style="font-size: 28px;">$</label>
+              </div>
+              <div class="col-lg-3">
+                <span onclick="newElement()" class="addBtn">Add</span>
+              </div>
+            </div>
+          </div>
+          <div class="total d-flex">
+            <h4>Total :</h4> <h4 id="amountsum"></h4>
+          </div>
+          <div class="total d-flex">
+            <h4>Fees :</h4> <h4 id="fees">2.5 %</h4>
+          </div> 
+          <div class="total d-flex">
+             <h4>NET Total :</h4> <h4 id="netfunction" ></h4>
+          </div>
+          
+          <ul id="myUL">
+            
+          </ul>
+        </div>
+        
+      </section>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
